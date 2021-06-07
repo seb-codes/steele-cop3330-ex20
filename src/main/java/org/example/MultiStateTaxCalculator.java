@@ -32,26 +32,23 @@ public class MultiStateTaxCalculator {
             }
             else
                 System.out.println("No county tax 4 U");
-            
-            tax_amount = tax * order_amount;
-            total = tax_amount+ order_amount;
-            System.out.println(String.format("The tax is $%.02f\nThe total is $%.02f", tax_amount, total));
+
         }
         else if(state.equals("Illinois")){
             tax += 0.08;
-            tax_amount = tax * order_amount;
-            total = tax_amount+ order_amount;
-            System.out.println(String.format("The tax is $%.02f\nThe total is $%.02f", tax_amount, total));
+
         }
         else{
-            System.out.println("No state tax 4 U");
+            System.out.println("No taxes 4 U");
         }
 
         tax_amount = tax * order_amount;
         total = tax_amount+ order_amount;
 
-        System.out.println(String.format("The total is $%.02f", total));
+        String msg = tax > 0.0
+                ? String.format("The tax is $%.02f\nThe total is $%.02f", tax_amount, total)
+                :String.format("The total is $%.02f", total);
 
-
+        System.out.println(msg);
     }
 }
