@@ -17,12 +17,13 @@ public class MultiStateTaxCalculator {
         Scanner scan = new Scanner(System.in);
         System.out.print("What state do you live in? ");
         String state = scan.nextLine();
-        System.out.print("What county do you live in? ");
-        String county = scan.nextLine();
+
 
 
         if(state.equals("Wisconsin")){
             tax = 0.05;
+            System.out.print("What county do you live in? ");
+            String county = scan.nextLine();
             if(county.equals("Eau Claire")){
                 tax+= 0.005;
             }
@@ -40,18 +41,16 @@ public class MultiStateTaxCalculator {
             tax += 0.08;
             tax_amount = tax * order_amount;
             total = tax_amount+ order_amount;
-            System.out.println(String.format("The tax is $%.02f\nThe total is $%.02f", tax_amount, total))
+            System.out.println(String.format("The tax is $%.02f\nThe total is $%.02f", tax_amount, total));
         }
         else{
             System.out.println("No state tax 4 U");
         }
 
-        double tax_amount = tax * order_amount;
-        double total = tax_amount+ order_amount;
+        tax_amount = tax * order_amount;
+        total = tax_amount+ order_amount;
 
         System.out.println(String.format("The total is $%.02f", total));
-
-
 
 
     }
